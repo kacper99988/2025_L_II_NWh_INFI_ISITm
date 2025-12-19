@@ -1,0 +1,19 @@
+version: 2.1
+
+jobs:
+  build-and-test:
+    machine:
+      image: ubuntu-2004:current
+    steps:
+      - checkout
+      - run:
+          name: Zainstaluj zaleznosci
+          command: make deps
+      - run:
+          name: Uruchom testy
+          command: make test
+
+workflows:
+  basic:
+    jobs:
+      - build-and-test
