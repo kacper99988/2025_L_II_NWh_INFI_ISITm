@@ -10,6 +10,9 @@ jobs:
           name: Zainstaluj zaleznosci
           command: make deps
       - run:
+          name: Sprawdz styl (Linter)
+          command: make lint
+      - run:
           name: Uruchom testy
           command: make test
 
